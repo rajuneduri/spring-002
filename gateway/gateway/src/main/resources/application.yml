@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: course-SERVICE
+        uri: http://localhost:9998
+        predicates:
+        - Path=/course/**
+  
+      - id: student-SERVICE
+        uri: http://localhost:9999
+        predicates:
+        - Path=/student/**
